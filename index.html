@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <!-- Hi Container with Waving Hand -->
+    <div class="hi-container">
+        <span class="hi-text">hi</span>
+        <span class="hi-wave" aria-label="waving hand">👋</span>
+    </div>
     <header class="site-header">
         <div class="container header-inner">
             <div class="profile-wrap">
@@ -19,6 +24,12 @@
             </div>
         </div>
     </header>
+
+    <!-- Scroll-activated container -->
+    <div class="born-here-container" id="bornHereContainer">
+        <img src="assets/ily_frame.jpg" alt="Birthplace" class="born-here-img">
+        <div class="born-here-text">this guy born here</div>
+    </div>
 
     <main class="container">
         <section id="about">
@@ -148,5 +159,17 @@
             </div>
         </div>
     </footer>
+
+        <script>
+        // Scroll animation for born-here-container
+        window.addEventListener('scroll', function() {
+            var container = document.getElementById('bornHereContainer');
+            var rect = container.getBoundingClientRect();
+            var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            if (rect.top < windowHeight - 100) {
+                container.classList.add('show');
+            }
+        });
+        </script>
 </body>
 </html>

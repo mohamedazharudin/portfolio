@@ -1,3 +1,143 @@
+/* Hi Container at Top */
+.hi-container {
+	width: 100vw;
+	background: #111;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 32px 0 24px 0;
+	font-size: 2.2rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+	position: relative;
+	z-index: 10;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+/* Animate hi text from right */
+.hi-text {
+	color: #fff;
+	margin-right: 12px;
+	opacity: 0;
+	transform: translateX(100vw);
+	animation: hiTextIn 1.1s cubic-bezier(.4,1.4,.6,1) 0.2s forwards;
+}
+.hi-wave {
+	display: inline-block;
+	animation: waveHand 1.2s infinite;
+	transform-origin: 70% 70%;
+	font-size: 1.2em;
+	opacity: 0;
+	transform: translateX(100vw);
+	animation: hiTextIn 1.1s cubic-bezier(.4,1.4,.6,1) 0.4s forwards, waveHand 1.2s infinite 1.3s;
+}
+@keyframes hiTextIn {
+	0% { opacity: 0; transform: translateX(100vw); }
+	60% { opacity: 1; transform: translateX(-20px); }
+	100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes waveHand {
+	0% { transform: rotate(0deg); }
+	10% { transform: rotate(15deg); }
+	20% { transform: rotate(-10deg); }
+	30% { transform: rotate(20deg); }
+	40% { transform: rotate(-5deg); }
+	50% { transform: rotate(10deg); }
+	60% { transform: rotate(0deg); }
+	100% { transform: rotate(0deg); }
+}
+/* Born Here Scroll Container */
+.born-here-container {
+	width: 100vw;
+	max-width: 100vw;
+	margin: 40px 0 0 0;
+	padding: 32px 0 40px 0;
+	background: #111;
+	border-radius: 0;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+	opacity: 0;
+	transform: translateY(60px) scale(0.98);
+	transition: opacity 0.7s cubic-bezier(.4,1.4,.6,1), transform 0.7s cubic-bezier(.4,1.4,.6,1);
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	box-sizing: border-box;
+}
+.born-here-container.show {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+.born-here-img {
+	width: 100%;
+	max-width: 350px;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+	margin-bottom: 18px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.born-here-text {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #fff;
+	opacity: 0;
+	transform: translateX(100vw);
+	transition: opacity 0.7s 0.2s, transform 0.7s 0.2s;
+	letter-spacing: 1px;
+	text-align: right;
+	width: 100vw;
+	max-width: 100vw;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding-right: 8vw;
+}
+.born-here-container.show .born-here-text {
+	opacity: 1;
+	transform: translateX(0);
+	animation: bornHereTextAnimRight 1.1s cubic-bezier(.4,1.4,.6,1);
+}
+@keyframes bornHereTextAnimRight {
+	0% { opacity: 0; transform: translateX(100vw); }
+	60% { opacity: 1; transform: translateX(-20px); }
+	100% { opacity: 1; transform: translateX(0); }
+}
+/* Header Animations */
+.site-header {
+	animation: fadeInHeader 1.2s ease-in;
+}
+
+.profile-img {
+	opacity: 0;
+	transform: translateY(-30px);
+	animation: profileFadeIn 1s 0.2s forwards;
+}
+
+.header-text {
+	opacity: 0;
+	transform: translateX(-40px);
+	animation: textSlideIn 1s 0.5s forwards;
+}
+
+@keyframes fadeInHeader {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes profileFadeIn {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes textSlideIn {
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
 
 :root{
 	--bg:#0b0b0d;
